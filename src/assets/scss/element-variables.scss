@@ -1,0 +1,58 @@
+/* 改变主题色变量 */
+$--color-primary: #196E74;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
+
+//
+// --------------------------- el-dialog ---------------------------
+//
+.el-dialog__wrapper {
+  .el-dialog {
+    border-radius: 4px;
+    overflow: hidden;
+    padding-bottom: 10px !important;
+  }
+  .el-dialog__header {
+    height: 43px;
+    background: #fff !important;
+    font-size: 18px;
+    line-height: 1;
+    padding: 15px 15px 10px !important;
+    .el-dialog__title {
+      color: #303133 !important;
+    }
+
+
+    .el-dialog__headerbtn {
+      top: 14px;
+      right: 10px;
+    }
+  }
+  .el-dialog__body {
+    padding: 10px 15px !important;
+  }
+
+  .el-dialog__footer {
+    padding: 5px 15px 0 !important;
+    height: inherit;
+    line-height: 1;
+    .dialog-footer {
+      height: inherit;
+      line-height: 1;
+    }
+  }
+}
+
+//
+// --------------------------- el-tooltip ---------------------------
+//
+.el-tooltip__popper {
+  max-width: 500px;
+}
+
+.el-slider__marks-text {
+  margin-top: 5px;
+}

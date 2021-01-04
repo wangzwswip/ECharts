@@ -5,7 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2241052_rtlm9fnv8v.css">
+    <link rel="stylesheet" href="<%= BASE_URL %>index.css">
+
+    <% for(var i in htmlWebpackPlugin.options.cdn.css) { %>
+      <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="preload" as="style">
+      <link rel="stylesheet" href="<%=htmlWebpackPlugin.options.cdn.css[i]%>">
+    <% } %>
+    <% for(var i in htmlWebpackPlugin.options.cdn.js) { %>
+      <link href="<%= htmlWebpackPlugin.options.cdn.js[i] %>" rel="preload" as="script">
+    <% } %>
+
+    <!-- <title><%= htmlWebpackPlugin.options.title %></title> -->
+    <title>ECharts常用案例</title>
   </head>
   <body>
     <noscript>
@@ -13,5 +26,6 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script src="<%= BASE_URL %>config.global.js"></script>
   </body>
 </html>
