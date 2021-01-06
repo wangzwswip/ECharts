@@ -1,9 +1,12 @@
 <template>
-  <div>test</div>
+  <div>测试</div>
 </template>
 
 <script>
-export default {}
+
+export default {
+  name: 'test',
+}
 </script>
 
 <style lang='scss' scoped>

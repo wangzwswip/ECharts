@@ -1,10 +1,10 @@
 <template>
   <div class="table__wrap"
-       v-loading="loading"
-       element-loading-text="拼命加载中..."
-       element-loading-spinner="el-icon-loading"
-       element-loading-background="rgba(173, 248, 253, 0.3)"
-  >
+      v-loading="loading"
+      element-loading-text="拼命加载中..."
+      element-loading-spinner="el-icon-loading"
+      element-loading-background="rgba(173, 248, 253, 0.3)"
+    >
     <slot/>
     <div class="pagination__wrap" v-if="!showfooter">
       <el-pagination

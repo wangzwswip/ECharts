@@ -7,7 +7,7 @@ import Scrollbar from '@assets/libs/scrollbar'
 import './services'
 import './middleware/filters'
 import './middleware/directives'
-// import './components/common'
+import './components/common'
 // import './filters'
 import * as Socket from './socket'
 import WSSTYPE from './WSSTYPE'
@@ -52,9 +52,9 @@ Vue.prototype.ToBase64 = function (file) {
   return new Promise((resolve, reject) => {
     var reader = new FileReader()
     reader.readAsDataURL(file)
-    reader.onload = (() => {
+    reader.onload = () => {
       resolve(reader.result)
-    })
+    }
   })
 }
 

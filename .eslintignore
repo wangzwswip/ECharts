@@ -1,0 +1,7 @@
+/public
+/dist
+/src/components/Gantt.vue
+/src/assets
+/src/
+/src/views/projectManagement/BIMModel.vue
+/src/views/fieldDetection/videoDevice/videoMonitorList.vue

@@ -1,4 +1,4 @@
-const WSS_URL = process.env.VUE_APP_websocket_url
+const WSS_URL = process.env.VUE_APP_url_socket
 
 let Socket = ''
 let setIntervalWesocketPush = null

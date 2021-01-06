@@ -15,26 +15,20 @@ files.keys().map(file => {
     routeChildren.push({
       ...f,
       meta: {
-        requireAuth: true
+        requireAuth: false
       }
     })
   })
 })
 
-
 const routes = [
   {
     path: '/',
-    redirect: '/index'
+    redirect: '/home'
   },
-  // {
-  //   path: '/login',
-  //   name: 'login',
-  //   component: () => import('../views/Login')
-  // },
   {
-    path: '/index',
-    name: 'index',
+    path: '/home',
+    name: 'home',
     meta: {
       requireAuth: false
     },
@@ -63,11 +57,15 @@ router.beforeEach((to, from, next) => {
       next()
     } else {
       next({
-        path: '/login'
+        path: '/'
       })
     }
   } else {
-    next()
+    if (to.path === '' || to.path === '/' || to.path === '/home') {
+      next({ path: '/echarts' })
+    } else {
+      next()
+    }
   }
 })
 
