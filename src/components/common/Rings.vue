@@ -45,30 +45,29 @@ export default {
       }
       let data = this.dataObj.data
       // let legend = this.dataObj.legend ? this.dataObj.legend : ''
-      // let unit = this.dataObj.unit ? this.dataObj.unit : ''
+      let unit = this.dataObj.unit ? this.dataObj.unit : ''
       let names = []
       data.map(item => {
         names.push(item.name)
       })
-      let chartData = this.dataObj.data
       let pieSeries = []
       let sum = 0
       let lineYAxis = []
       let arrName = []
       let arrValue = []
       let color = ['#0c90ce', '#12ce7d', '#b8991e']
-      chartData.forEach((v, i) => {
+      data.forEach((v, i) => {
         arrName.push(v.name)
         arrValue.push(v.value)
         sum = sum + v.value
       })
-      chartData.forEach((v, i) => {
+      data.forEach((v, i) => {
         pieSeries.push({
           name: '',
           type: 'pie',
-          clockWise: false,
-          hoverAnimation: false,
-          radius: [75 - i * 15 + '%', 70 - i * 15 + '%'],
+          clockWise: false, // 饼图的扇区是否是顺时针排布。
+          hoverAnimation: false, // 是否开启 hover 在扇区上的放大动画效果
+          radius: [75 - i * 15 + '%', 70 - i * 15 + '%'], // 内外半径
           center: ['50%', '50%'],
           label: {
             show: false
@@ -79,18 +78,22 @@ export default {
           }, {
             value: sum - v.value,
             name: '',
+            tooltip: {
+              show: false
+            },
             itemStyle: {
               color: 'rgba(0,0,0,0)'
             }
           }]
         })
+        // 下面这个是为了创建不同的背景，例如3/4
         pieSeries.push({
           name: '',
           type: 'pie',
-          silent: true,
+          silent: true, // 图形是否不响应和触发鼠标事件，默认为 false，
           z: 1,
-          clockWise: false, // 顺时加载
-          hoverAnimation: false, // 鼠标移入变大
+          clockWise: false,
+          hoverAnimation: false,
           radius: [75 - i * 15 + '%', 70 - i * 15 + '%'],
           center: ['50%', '50%'],
           label: {
@@ -118,7 +121,7 @@ export default {
       })
       let myChart = this.$echarts.init(document.getElementById(this.dataObj.id))
       let option = {
-        // backgroundColor: '#fff',
+        // backgroundColor: '#fff', // 背景色
         color: color,
         grid: {
           top: 10,
@@ -128,7 +131,7 @@ export default {
         tooltip: {
           show: true,
           trigger: 'item',
-          formatter: '{a}<br>{b}:{c}({d}%)'
+          formatter: '{b}:{c}' + unit + '({d}%)'
         },
         yAxis: [{
           type: 'category',
@@ -148,20 +151,17 @@ export default {
           show: false
         }],
         legend: {
-          show: false,
+          show: true,
           icon: 'circle',
           // top: 'center',
-          top: 10,
-          right: 10,
-          itemWidth: 14,
+          bottom: 2,
+          left: '20%',
+          itemWidth: 24,
           itemHeight: 14,
-          data: chartData,
-          // width: 5,
-          // padding: [0, 16],
+          data: data,
           itemGap: 15,
-          orient: 'vertical',
+          orient: 'horizontal',
           formatter: function (value) {
-            // eslint-disable-next-line no-undef
             return '{value|' + value + '}'
           },
           textStyle: {
@@ -169,7 +169,7 @@ export default {
               value: {
                 fontSize: 16,
                 // lineHeight: 20,
-                color: '#fff',
+                color: '#000',
                 fontFamily: 'MicrosoftYaHei'
               }
             }
