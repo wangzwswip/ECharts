@@ -48,6 +48,16 @@ export default {
           name: 'test',
           title: 'test',
           children: []
+        },
+        {
+          name: 'use',
+          title: 'use',
+          children: []
+        },
+        {
+          name: 'plugin',
+          title: 'plugin',
+          children: []
         }
       ],
       activeIndex: 'echarts',

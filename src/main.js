@@ -17,6 +17,10 @@ import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/zh-CN'
 import './assets/scss/element-variables.scss'
 import './assets/scss/common.scss'
+import 'echarts-liquidfill'
+import FullCalendar from '@fullcalendar/vue'
+
+Vue.component('FullCalendar', FullCalendar)
 
 window.$Socket = Socket
 window.$WSSTYPE = WSSTYPE

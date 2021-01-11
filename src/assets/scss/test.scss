@@ -1,0 +1,15 @@
+.divid {
+  transition: all 0.4s ease-in;
+  -webkit-transition: all 0.4s ease-in;
+  -moz-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  transform: rotate(360deg)
+}
+.animations {
+  animation: al 3s infinite;
+}
+@keyframes al {
+  0% {left: 10px; opacity: 0.5;}
+  30% {left: 50px}
+  100% {left: 70px}
+}

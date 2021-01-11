@@ -48,7 +48,7 @@ export default {
             }
           },
           x: 'center',
-          y: '30%'
+          y: '40%'
         },
         graphic: [{
           type: 'group',
@@ -61,14 +61,14 @@ export default {
             top: 'middle',
             style: {
               fill: '#fff',
-              text: '覆盖度',
+              text: '百分比',
               font: '14px Adobe Heiti Std R'
             }
           }]
         }],
         series: [{
           type: 'liquidFill',
-          radius: '100%',
+          radius: '60%',
           center: ['50%', '50%'],
           waveAnimation: 10, // 动画时长
           amplitude: 5, // 振幅
