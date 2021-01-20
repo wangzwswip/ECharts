@@ -46,6 +46,7 @@ module.exports = {
         // 'https://cdn.bootcss.com/element-ui/2.11.1/theme-chalk/index.css'
       ],
       js: [
+        'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js'
         // vue
         // '//cdn.staticfile.org/vue/2.6.10/vue.min.js',
       //     // vue-router

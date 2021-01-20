@@ -50,13 +50,18 @@ export default {
           children: []
         },
         {
-          name: 'use',
-          title: 'use',
+          name: 'uses',
+          title: 'uses',
           children: []
         },
         {
           name: 'plugin',
           title: 'plugin',
+          children: []
+        },
+        {
+          name: 'mapshow',
+          title: 'map',
           children: []
         }
       ],

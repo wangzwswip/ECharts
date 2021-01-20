@@ -10,13 +10,18 @@ export default [
     component: () => import('../../views/test.vue')
   },
   {
-    path: '/use',
-    name: 'use',
-    component: () => import('../../views/use.vue')
+    path: '/uses',
+    name: 'uses',
+    component: () => import('../../views/uses.vue')
   },
   {
     path: '/plugin',
     name: 'plugin',
     component: () => import('../../views/plugin.vue')
+  },
+  {
+    path: '/map-show',
+    name: 'mapshow',
+    component: () => import('../../views/MapShow.vue')
   }
 ]

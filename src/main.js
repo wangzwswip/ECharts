@@ -18,13 +18,19 @@ import locale from 'element-ui/lib/locale/lang/zh-CN'
 import './assets/scss/element-variables.scss'
 import './assets/scss/common.scss'
 import 'echarts-liquidfill'
+import 'viewerjs/dist/viewer.css'
+import Viewer from 'v-viewer'
 import FullCalendar from '@fullcalendar/vue'
+import vueSwiper from 'vue-awesome-swiper' // 引入vue-awesome-swiper
+import 'swiper/dist/css/swiper.css' // 引入样式
+import  Velocity from 'velocity-animate'
 
 Vue.component('FullCalendar', FullCalendar)
-
+Vue.use(vueSwiper) // 使用插件
 window.$Socket = Socket
 window.$WSSTYPE = WSSTYPE
 Vue.use(Echarts)
+Vue.use(Viewer)
 Vue.prototype.$echarts = Echarts
 Vue.use(ElementUI, {
   locale
