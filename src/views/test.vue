@@ -43,25 +43,28 @@
             label="编号">
           </el-table-column>
           <el-table-column
-            prop="hymc"
+            prop="mc"
             align="center"
             :show-overflow-tooltip="true"
-            label="会议名称">
+            label="名称">
           </el-table-column>
           <el-table-column
-            prop="qcrmc"
+            prop="photoUrl"
             align="center"
             :show-overflow-tooltip="true"
-            label="起草人">
+            label="照片">
+            <template slot-scope="scope">
+              <ImagePic :src="scope.row.photoUrl"></ImagePic>
+            </template>
           </el-table-column>
           <el-table-column
-            prop="hylx"
+            prop="lx"
             align="center"
             :show-overflow-tooltip="true"
             label="类型">
             <template slot-scope="scope">
-              <span v-if="scope.row.hylx === '1'">交战办会议通知</span>
-              <span v-else>交通委会议通知</span>
+              <span v-if="scope.row.hylx === '1'">类型1</span>
+              <span v-else>类型2</span>
             </template>
           </el-table-column>
           <el-table-column
@@ -86,13 +89,13 @@
               <span v-if="scope.row.spzt === '4'"><i style="background:#000" class="cirleColor"></i>已驳回</span>
             </template>
           </el-table-column>
-          <el-table-column
+          <!-- <el-table-column
             prop="gxsj"
             align="center"
             :show-overflow-tooltip="true"
             label="更新时间">
             <template slot-scope="scope">{{scope.row.time | dateFormat}}</template>
-          </el-table-column>
+          </el-table-column> -->
           <el-table-column
             label="操作"
             fixed="right"
@@ -132,7 +135,16 @@ export default {
   data() {
     return {
       loading: false,
-      tableList: []
+      tableList: [
+        {
+          bh: '测试1',
+          mc: '美丽',
+          photoUrl: require('@assets/images/map_1.jpg'),
+          lx: '1',
+          fbzt: '1',
+          spzt: '1'
+        }
+      ]
     }
   },
   methods: {
